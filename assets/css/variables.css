@@ -1,0 +1,36 @@
+:root {
+    --primary-font: 'Open Sans', sans-serif;
+
+    --primary-fw: 400;
+    --fw-lighter: 300;
+    --fw-bold: 500;
+    --fw-bolder: 700;
+
+    --primary-fs: 1.4rem;
+    --fs-xs: 0.8rem;
+    --fs-sm: 1.2rem;
+    --fs-md: 1.6rem;
+    --fs-lg: 1.8rem;
+    --fs-xl: 2.2rem;
+    --fs-2xl: 2.4rem;
+    --fs-3xl: 2.6rem;
+    --fs-4xl: 2.8rem;
+    --fs--4xl: 3rem;
+
+    --primary-line-height: 1.6;
+    --primary-letter-spacing: 0.05em;
+
+    --primary-txt-clr: #333;
+
+    --primary-gap: 1.6rem;
+    --sm-gap: 0.8rem;
+
+    --primary-rounded: 1.2rem;
+
+    --primary-clr: #1A1A1D;
+    --white-clr: #fff;
+    --black-clr: #000;
+    --red-clr: #ff0000;
+    --primary-box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.2);
+    --primary-transition: all ease 325ms;
+}

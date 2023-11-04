@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+
+    font-family: var(--primary-font);
+    font-weight: var(--primary-fw);
+    line-height: var(--primary-line-height);
+    letter-spacing: var(--primary-letter-spacing);
+    transition: var(--primary-transition);
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    scroll-behavior: smooth;
+    image-rendering: optimizeSpeed;
+}

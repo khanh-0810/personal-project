@@ -1,0 +1,147 @@
+.main .title {
+    width: 100%;
+    background-size: cover;
+
+}
+
+.main .title h1 { 
+    font-family: 'Dancing Script', cursive;
+    color: #f02a1c;
+    font-weight: bold;
+    font-size: var(--fs-4xl);
+}
+
+.subheading {
+    display: flex;
+}
+
+.subheading h1 {
+    font-family: 'Dancing Script', cursive;
+    color: rgb(239, 8, 8);
+    font-weight: bold;
+    font-size: var(--fs-4xl);
+    position: relative;
+    left: 3rem;
+}
+
+.product-item {
+    height: auto;
+    min-height: 10rem;
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 1rem;
+    box-shadow: var(--primary-box-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    gap: 1rem;
+}
+
+.product-item:hover {
+    transform: scale(1.1);
+}
+
+.product-item img {
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.product-item .infor {
+    color: var(--black-clr);
+    font-size: var(--fs-2xl);
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+}
+
+.purchase-action {
+    display: flex;
+    gap: 2rem;
+    font-size: var(--fs-md);
+}
+
+.purchase-action .discount {
+    color: red;
+    font-weight: bold;
+}
+
+.purchase-action .price {
+    text-decoration: line-through;
+    opacity: 0.4;
+    font-weight: bold;
+}
+
+.product-item .buy-now {
+    font-size: var(--fs-xl);
+    color: white;
+    border-radius: 1rem;
+    background-color: #f02a1c;
+    width: 20rem;
+    height: 5rem;
+}
+
+.product-item .buy-now:hover {
+    opacity: 0.5;
+}
+
+.introduce h1 {
+    font-size: 2.5rem;
+    color: #f02a1c;
+}
+
+.introduce p {
+    font-size: 2rem;
+    text-align: justify;
+    max-width: 100%;
+}
+
+
+/* Mobile devices -> Width < 740px */
+@media screen and (max-width: 46.1875em) {
+
+    .main .title h1 { 
+        font-size: 2rem;
+    }
+
+    .product-item .infor {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .main .subheading h1 {
+        left: 1rem;
+    }
+    
+    .purchase-action {
+        display: grid;
+        gap: 0rem;
+        font-size: 1.7rem;
+    }
+    
+    .product-item .buy-now {
+        font-size: var(--fs-md);
+        border-radius: 1rem;
+        max-width: 75%;
+        height: 4rem;
+    }
+
+    .introduce h1 {
+        font-size: 2rem;
+    }
+
+    .introduce p {
+        font-size: 1.8rem;
+        text-align: justify;
+        max-width: 100%;
+        height: 20rem;
+        overflow: auto;
+        
+    }
+
+}
+
+/* Tablet devices -> 740px <= Width < 1023px */
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+}

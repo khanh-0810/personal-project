@@ -1,0 +1,20 @@
+ul {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input, button {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+button {
+    cursor: pointer;
+}

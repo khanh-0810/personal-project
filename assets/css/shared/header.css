@@ -36,6 +36,8 @@ body {
     font-family: 'Dancing Script', cursive;
     font-size: 6rem;
     color: var(--black-clr);
+    font-weight: bold;
+    text-shadow: 0.2rem 0.2rem 0.4rem #ffff;
 }
 
 .header .navbar a {
@@ -51,14 +53,12 @@ body {
 
 .header .navbar a:hover {
     color: #f8b989;
-    border-radius: 1rem;
-    opacity: 0.6;
 }
 
 .header .search-bar {
     background: var(--white-clr);
     border-radius: 1.5rem;
-    width: 30rem;
+    width: 35rem;
     height: 3rem;
     display: flex;
     align-items: center;

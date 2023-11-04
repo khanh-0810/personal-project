@@ -7,8 +7,8 @@
 .main .title h1 { 
     font-family: 'Dancing Script', cursive;
     color: #f02a1c;
-    font-weight: bold;
-    font-size: var(--fs-4xl);
+    font-weight: 900;
+    font-size: 4rem;
 }
 
 .subheading {
@@ -97,12 +97,12 @@
     max-width: 100%;
 }
 
-
 /* Mobile devices -> Width < 740px */
 @media screen and (max-width: 46.1875em) {
 
     .main .title h1 { 
-        font-size: 2rem;
+        font-size: 2.3rem;
+        font-weight: bold;
     }
 
     .product-item .infor {

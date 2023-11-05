@@ -121,7 +121,7 @@
     }
     
     .product-item .buy-now {
-        font-size: var(--fs-md);
+        font-size: var(--fs-ms);
         border-radius: 1rem;
         max-width: 75%;
         height: 4rem;

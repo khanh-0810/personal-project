@@ -73,12 +73,15 @@
 }
 
 .product-item .buy-now {
-    font-size: var(--fs-xl);
-    color: white;
     border-radius: 1rem;
     background-color: #f02a1c;
     width: 20rem;
     height: 5rem;
+}
+
+.product-item .buy-now a {
+    color: white;
+    font-size: var(--fs-xl);
 }
 
 .product-item .buy-now:hover {
@@ -120,10 +123,13 @@
     }
     
     .product-item .buy-now {
-        font-size: var(--fs-ms);
         border-radius: 1rem;
         max-width: 75%;
         height: 4rem;
+    }
+
+    .product-item .buy-now a {
+        font-size: var(--fs-ms);
     }
 
     .introduce h1 {

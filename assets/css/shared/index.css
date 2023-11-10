@@ -63,13 +63,12 @@
 }
 
 .purchase-action .discount {
-    color: red;
+    color: rgb(239, 8, 8);
     font-weight: bold;
 }
 
 .purchase-action .price {
     text-decoration: line-through;
-    opacity: 0.4;
     font-weight: bold;
 }
 

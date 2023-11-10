@@ -6,7 +6,7 @@
 .menu-1  h1,
 .menu-2 h1 {
     font-size: var(--fs-4xl);
-    color: #1b100d;
+    color: yellow;
     font-family: 'Dancing Script', cursive;
     font-weight: 800;    
 }
@@ -21,7 +21,7 @@
 
 .footer .navbar a {
     font-size: var(--fs-2xl);
-    color: #1b100d;
+    color: yellow;
 }
 
 .footer .menu-1 .navbar a:hover {
@@ -34,7 +34,7 @@
 
 .footer .menu-2 p {
     font-size: var(--fs-2xl);
-    color: #1b100d;
+    color: yellow;
     font-family: 'Dancing Script', cursive;
 }
 

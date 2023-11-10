@@ -11,7 +11,7 @@
 }
 
 .container {
-    width: 120rem;
+    width: 140rem;
 } 
 
 .container-fluid {
@@ -31,6 +31,13 @@
     margin-right: calc(0 - var(--primary-gap));
 }
 
+.row.h-unset { height: unset }
+
+.row.no-gutter {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .col-1,
 .col-2,
 .col-3,
@@ -45,6 +52,22 @@
 .col-12 {
     padding-left: var(--primary-gap);
     padding-right: var(--primary-gap);
+}
+
+.row.no-gutter .col-1,
+.row.no-gutter .col-2,
+.row.no-gutter .col-3,
+.row.no-gutter .col-4,
+.row.no-gutter .col-5,
+.row.no-gutter .col-6,
+.row.no-gutter .col-7,
+.row.no-gutter .col-8,
+.row.no-gutter .col-9,
+.row.no-gutter .col-10,
+.row.no-gutter .col-11,
+.row.no-gutter .col-12 {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* Desktop devices */

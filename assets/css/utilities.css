@@ -45,6 +45,12 @@
     justify-content: center;
 }
 
+.f-column {
+    display: flex;
+    flex-direction: column;
+
+}
+
 .w-100 {
     width: 100%;
 }

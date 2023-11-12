@@ -4,8 +4,7 @@
     font-family: 'Dancing Script', cursive;
     font-weight: bold;
     border-bottom: 0.1rem solid #aaa5a5;
-    width: 90%; 
-    margin-left: 3rem;
+    width: 100%; 
 }
 
 
@@ -198,7 +197,39 @@
     font-size: var(--fs-lg);
 }
 
+.detail-information {
+    border-bottom: 0.1rem solid #aaa5a5;
+    width: 100%;
+    max-width: 35rem; 
+}
 
+.detail-information  h2 {
+    font-size: var(--fs-2xl);
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+}
+
+.detail strong {
+    font-size: var(--fs-xl);
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+}
+
+.detail p{
+    font-size: var(--fs-lg);
+    font-family: 'Dancing Script', cursive;
+    display: flex;
+}
+
+.detail ul li {
+    font-size: var(--fs-lg);
+    font-family: 'Dancing Script', cursive;
+}
 
 
 /* Mobile devices -> Width < 740px */
@@ -208,5 +239,7 @@
         font-size: var(--fs-4xl);
         margin-top: 2rem;
     }
+
+    
 
 }

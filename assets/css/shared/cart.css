@@ -1,0 +1,177 @@
+.information-cart {
+    max-width: 90%;
+    border-bottom: 0.3rem solid #aaa5a5;
+}
+
+.image-information-cart {
+    width: 90%;
+    height: 12rem;
+    border-bottom: 0.1rem solid #aaa5a5;
+}
+
+.information-cart p {
+    font-size: var(--fs-xl);
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+}
+
+
+.image-information-cart .product-image {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.image-information-cart .product-image i {
+    font-size: var(--fs-2xl);
+}
+
+.image-information-cart .product-image i:hover {
+    transform: scale(1.1);
+    opacity: 0.5;
+}
+
+.image-information-cart .product-image img {
+    width: 10rem;
+    height: auto;
+    min-height: 10rem;
+    max-height: 100%;
+    object-fit: cover;
+    filter: contrast(110%);
+}
+
+.image-information-cart .product-image p {
+    font-size: var(--fs-2xl);
+    font-family: 'Dancing Script', cursive;
+}
+
+.image-information-cart .product-price {
+    height: auto;
+    min-height: 10rem;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.image-information-cart .product-price p {
+    height: auto;
+    font-size: var(--fs-lg);
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+}
+
+.image-information-cart .product-quantity {
+    height: auto;
+    min-height: 10rem;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-information-cart .product-quantity #quantity {
+    max-width: 100%;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    box-shadow: var(--primary-box-shadow);
+    background: #cfcfcf;
+    color: black;
+}
+
+.image-information-cart .product-quantity button {
+    background: #cfcfcf;
+    color: black;
+    height: 4rem;
+    max-width: 100%;
+    width: 3rem;
+    box-shadow: var(--primary-box-shadow);
+}
+
+.image-information-cart .product-quantity .button-2 {
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.image-information-cart .product-quantity .button-1 {
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.image-information-cart .product-subtotal {
+    height: auto;
+    min-height: 10rem;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.image-information-cart .product-subtotal p {
+    height: auto;
+    font-size: var(--fs-lg);
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+}
+
+.pay-cart .product-name {
+    border-bottom: 0.3rem solid #aaa5a5;
+}
+
+.pay-cart .product-subtotal,
+.pay-cart .shipp,
+.pay-cart .total {
+    border-bottom: 0.1rem solid #aaa5a5;
+    margin-top: 2rem;
+    display: flex;
+}
+
+.pay-cart .product-subtotal .price,
+.pay-cart .shipp .price,
+.pay-cart .total .price {
+    display: flex;
+    justify-content: end;
+}
+
+.pay-cart .product-name p {
+    font-size: var(--fs-xl);
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+}
+
+.pay-cart .product-subtotal p,
+.pay-cart .shipp p,
+.pay-cart .total p {
+    font-size: var(--fs-lg);
+    font-family: 'Dancing Script', cursive;
+}
+
+.pay-cart .product-subtotal .price p,
+.pay-cart .shipp .price p,
+.pay-cart .total .price p {
+    font-size: var(--fs-lg);
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+}
+
+.pay-cart .checkout button {
+    width: 30rem;
+    max-width: 100%;
+    height: auto;
+    background: #cfcfcf;
+    color: black;
+    box-shadow: var(--primary-box-shadow);
+    border-radius: 1rem;
+}
+
+.pay-cart .checkout button p {
+    font-size: var(--fs-xl);
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+}
+
+.pay-cart .checkout button:hover {
+    background: yellow;
+    color: red;
+    transform: scale(1.1);
+}
+
+

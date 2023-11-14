@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- General styles -->
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <link rel="stylesheet" href="../../assets/css/grid-system.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/utilities.css">
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <!-- Specific styles -->
+    <link rel="stylesheet" href="../../assets/css/shared/header.css">
+    <link rel="stylesheet" href="../../assets/css/shared/footer.css">
+    <link rel="stylesheet" href="../../assets/css/shared/product-detail.css">
+    <link rel="stylesheet" href="../../assets/css/shared/cart.css">
+
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- start header -->
+    <section class="header p-0 m-0 mb-8 pb-2">
+        <div class="container-fluid ">
+            <div class="row p-0 m-0">
+                <div class="col-sm-6 col-md-4 col-4 p-0 m-0">
+                    <div class="row centered">
+                        <div class="col-sm-5 col-md-4 col-4">
+                            <div class="logo">
+                                <img src="../../assets/img/logo.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-7 col-md-8 col-8">
+                            <div class="name">
+                                <h1>Quốc Việt</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-5 col-5 centered">
+                    <nav class="navbar">
+                        <a href="../../index.html" class="navbar-item-link">
+                            <i class='bx bxs-home-smile'></i>
+                            <span>Trang Chủ</span>
+                        </a>
+                        <a href="#" class="navbar-item-link">
+                            <i class='bx bxs-user-circle'></i>
+                            <span>Đăng Nhập</span>
+                        </a>
+                        <a href="#" class="navbar-item-link">
+                            <i class='bx bxs-cart-download'></i>
+                            <span>Giỏ Hàng</span>
+                        </a>
+                    </nav>
+                </div>
+
+
+                <div class="col-sm-12 col-md-3 col-3 last">
+                    <div class="search-bar">
+                        <form class="centered">
+                            <input type="text" placeholder="Nhập Sản Phẩm Bạn Cần Tìm...!" />
+                            <button type="submit centered">
+                                <i class='bx bx-search' ></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end header -->
+    
+    <!-- start main -->
+
+    <section class="main mt-8 pt-8">
+        <div class="container-fluid">
+            <div class="row mt-5">
+                <div class="col-sm-12 col-md-7 col-7">
+                    <div class="information-cart d-flex mb-2">
+                        <div class="col-sm-6 col-md-6 col-6">
+                            <div class="product-name">
+                                <p>Sản Phẩm</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-2">
+                            <div class="product-price">
+                                <p>Giá Tiền</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-2">
+                            <div class="product-quantity">
+                                <p>Số Lượng</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-2">
+                            <div class="product-subtotal">
+                                <p>Tạm Tính</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SP1 -->
+                    <div class="image-information-cart mt-2 d-flex">
+                        <div class="col-sm-6 col-md-6 col-6">
+                            <div class="product-image">
+                                <button>
+                                    <i class='bx bxs-x-circle'></i>
+                                </button>
+                                <img src="../../assets/img/sanpham1.png" alt="">
+                                <p>Yến Sào Tin Chế</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-2">
+                            <div class="product-price">
+                                <p>3.500.000đ</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-2">
+                            <div class="product-quantity">
+                                <button class="button-1" onclick="decrease()">-</button>
+                                <input type="text" id="quantity" value="1" readonly>
+                                <button class="button-2" onclick="increase()">+</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-2">
+                            <div class="product-subtotal">
+                                <p>3.500.000đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SP2 -->
+                    <div class="image-information-cart mt-2 d-flex">
+                        <div class="col-sm-6 col-md-6 col-6">
+                            <div class="product-image">
+                                <button>
+                                    <i class='bx bxs-x-circle'></i>
+                                </button>
+                                <img src="../../assets/img/sanpham1.png" alt="">
+                                <p>Yến Sào Tin Chế</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-2">
+                            <div class="product-price">
+                                <p>3.500.000đ</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-2">
+                            <div class="product-quantity">
+                                <button class="button-1" onclick="decrease()">-</button>
+                                <input type="text" id="quantity" value="1" readonly>
+                                <button class="button-2" onclick="increase()">+</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-2">
+                            <div class="product-subtotal">
+                                <p>3.500.000đ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 col-md-5 col-5">
+                    <div class="pay-cart">
+                        <div class="col-sm-12 col-md-12 col-12">
+                            <div class="product-name">
+                                <div class="col-sm-12 col-md-12 col-12">
+                                    <p>Cộng Giỏ Hàng</p>
+                                </div>
+                            </div>
+                            <div class="product-subtotal">
+                                <div class="col-sm-6 col-md-6 col-6">
+                                    <div class="name">
+                                        <p>Tạm Tính</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-6">
+                                    <div class="price">
+                                        <p>7.000.000đ</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shipp">
+                                <div class="col-sm-6 col-md-6 col-6">
+                                    <div class="name">
+                                        <p>Phí Vận Chuyển</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-6">
+                                    <div class="price">
+                                        <p>30.000đ</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="total">
+                                <div class="col-sm-6 col-md-6 col-6">
+                                    <div class="name">
+                                        <p>Tổng Tiền Thanh Toán</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-6">
+                                    <div class="price">
+                                        <p>7.030.000đ</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-12 col-md-12 col-12 mt-4 centered">
+                            <div class="checkout">
+                                <button>
+                                    <p>Tiến Hành Thanh Toán</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end main -->
+</body>
+</html>

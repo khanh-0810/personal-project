@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="initialCartState()">
     <!-- start header -->
     <section class="header p-0 m-0 mb-8 pb-2">
         <div class="container-fluid ">
@@ -82,132 +82,13 @@
     <section class="main mt-8 pt-8">
         <div class="container-fluid">
             <div class="row mt-5">
-                <div class="col-sm-12 col-md-7 col-7">
-                    <div class="information-cart d-flex mb-2">
-                        <div class="col-sm-6 col-md-6 col-6">
-                            <div class="product-name">
-                                <p>Sản Phẩm</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-md-2 col-2">
-                            <div class="product-price">
-                                <p>Giá Tiền</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-md-2 col-2">
-                            <div class="product-quantity">
-                                <p>Số Lượng</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-md-2 col-2">
-                            <div class="product-subtotal">
-                                <p>Tạm Tính</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- SP1 -->
-                    <div class="image-information-cart mt-2 d-flex">
-                        <div class="col-sm-6 col-md-6 col-6">
-                            <div class="product-image">
-                                <button>
-                                    <i class='bx bxs-x-circle'></i>
-                                </button>
-                                <img src="../../assets/img/sanpham1.png" alt="">
-                                <p>Yến Sào Tin Chế</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-md-2 col-2">
-                            <div class="product-price">
-                                <p>3.500.000đ</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-md-2 col-2">
-                            <div class="product-quantity">
-                                <button class="button-1" onclick="decrease()">-</button>
-                                <input type="text" id="quantity" value="1" readonly>
-                                <button class="button-2" onclick="increase()">+</button>
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-md-2 col-2">
-                            <div class="product-subtotal">
-                                <p>3.500.000đ</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- SP2 -->
-                    <div class="image-information-cart mt-2 d-flex">
-                        <div class="col-sm-6 col-md-6 col-6">
-                            <div class="product-image">
-                                <button>
-                                    <i class='bx bxs-x-circle'></i>
-                                </button>
-                                <img src="../../assets/img/sanpham1.png" alt="">
-                                <p>Yến Sào Tin Chế</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-md-2 col-2">
-                            <div class="product-price">
-                                <p>3.500.000đ</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-md-2 col-2">
-                            <div class="product-quantity">
-                                <button class="button-1" onclick="decrease()">-</button>
-                                <input type="text" id="quantity" value="1" readonly>
-                                <button class="button-2" onclick="increase()">+</button>
-                            </div>
-                        </div>
-                        <div class="col-sm-2 col-md-2 col-2">
-                            <div class="product-subtotal">
-                                <p>3.500.000đ</p>
-                            </div>
-                        </div>
-                    </div>
+                <div id="cart-list-container" class="col-sm-12 col-md-7 col-7">
+                    <!-- List of products will be here by cart.js -->
                 </div>
                 <div class="col-sm-5 col-md-5 col-5">
                     <div class="pay-cart">
-                        <div class="col-sm-12 col-md-12 col-12">
-                            <div class="product-name">
-                                <div class="col-sm-12 col-md-12 col-12">
-                                    <p>Cộng Giỏ Hàng</p>
-                                </div>
-                            </div>
-                            <div class="product-subtotal">
-                                <div class="col-sm-6 col-md-6 col-6">
-                                    <div class="name">
-                                        <p>Tạm Tính</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-6">
-                                    <div class="price">
-                                        <p>7.000.000đ</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="shipp">
-                                <div class="col-sm-6 col-md-6 col-6">
-                                    <div class="name">
-                                        <p>Phí Vận Chuyển</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-6">
-                                    <div class="price">
-                                        <p>30.000đ</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="total">
-                                <div class="col-sm-6 col-md-6 col-6">
-                                    <div class="name">
-                                        <p>Tổng Tiền Thanh Toán</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-6">
-                                    <div class="price">
-                                        <p>7.030.000đ</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div id="cart-subtotal" class="col-sm-12 col-md-12 col-12">
+                            <!-- Bill subtotal will be here by cart.jss -->
                         </div>
                         
                         <div class="col-sm-12 col-md-12 col-12 mt-4 centered">
@@ -223,5 +104,8 @@
         </div>
     </section>
     <!-- end main -->
+
+    <script src="../../js/components.js"></script>
+    <script src="../../js/cart.js"></script>
 </body>
 </html>

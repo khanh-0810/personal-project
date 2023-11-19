@@ -24,7 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
 </head>
-<body">
+<body onload="initialAppState()">
     <!-- start header -->
     <section class="header">
         <div class="container-fluid p-0 m-0 pt-1 pb-1">
@@ -85,7 +85,11 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-12 mt-4">
                     <div class="banner-wrapper centered mt-8 pt-8">
-                        <img src="./assets/img/banner1.png" alt="">
+                        <img class="slideShow" src="./assets/img/banner1.jpg">
+				        <img class="slideShow" src="./assets/img/banner1.png">
+				        <img class="slideShow" src="./assets/img/banner2.jpg">
+                        <img class="slideShow" src="./assets/img/banner4.jpg">
+                        <img class="slideShow" src="./assets/img/banner4.jpg">
                     </div>
                 </div>
             </div>
@@ -103,76 +107,8 @@
                      </div>
                 </div>
 
-                <div class="row pt-1 pb-3">
-                    <div class="col-sm-12 col-md-12 col-12">
-                        <div class="subheading">
-                            <h1>Sản Phẩm Nổi Bật</h1>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-6 col-3 centered">
-                        <div class="product-item pb-2 mt-2">
-                                <a href="#">
-                                    <img src="./assets/img/sanpham1.png" alt="">
-                                </a>
-                            <div class="infor">Yến Hảo Hạng</div>
-                            <div class="purchase-action">
-                                <div class="discount">3.500.000đ</div>
-                                <div class="price">4.300.000đ</div> 
-                            </div> 
-                            <button class="buy-now">
-                                 <a href="./pages/product/product-detail.html">XEM CHI TIẾT</a> 
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-6 col-3 centered">
-                        <div class="product-item pb-2 mt-2">
-                                <a href="#">
-                                    <img src="./assets/img/sanpham1.png" alt="">
-                                </a>
-                            <div class="infor">Yến Hảo Hạng</div>
-                            <div class="purchase-action">
-                                <div class="discount">3.500.000đ</div>
-                                <div class="price">4.300.000đ</div> 
-                            </div> 
-                            <button class="buy-now">
-                                <a href="./pages/product/product-detail.html">XEM CHI TIẾT</a> 
-                           </button>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-6 col-3 centered">
-                        <div class="product-item pb-2 mt-2">
-                                <a href="#">
-                                    <img src="./assets/img/sanpham1.png" alt="">
-                                </a>
-                            <div class="infor">Yến Hảo Hạng</div>
-                            <div class="purchase-action">
-                                <div class="discount">3.500.000đ</div>
-                                <div class="price">4.300.000đ</div> 
-                            </div> 
-                            <button class="buy-now">
-                                 <a href="./pages/product/product-detail.html">XEM CHI TIẾT</a> 
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-6 col-3 centered">
-                        <div class="product-item pb-2 mt-2">
-                                <a href="#">
-                                    <img src="./assets/img/sanpham1.png" alt="">
-                                </a>
-                            <div class="infor">Yến Hảo Hạng</div>
-                            <div class="purchase-action">
-                                <div class="discount">3.500.000đ</div>
-                                <div class="price">4.300.000đ</div> 
-                            </div> 
-                            <button class="buy-now">
-                                 <a href="./pages/product/product-detail.html">XEM CHI TIẾT</a> 
-                            </button>
-                        </div>
-                    </div>
+                <div id="product-list" class="row pt-1 pb-3">
+                    <!-- Products list will be append here by initialProducts in main.js -->
                 </div>
 
 
@@ -415,5 +351,10 @@
         </div>
     </section>
     <!-- end footer -->
+    <script src="./js/components.js"></script>
+    <script src="./js/database.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/banner.js"></script>
 </body>
 </html>

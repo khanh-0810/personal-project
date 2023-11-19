@@ -40,7 +40,7 @@
 }
 
 .product-item:hover {
-    
+    transform: scale(1.1);
 }
 
 .product-item img {
@@ -62,12 +62,12 @@
     font-size: var(--fs-md);
 }
 
-.purchase-action .discount {
+.purchase-action .price {
     color: rgb(239, 8, 8);
     font-weight: bold;
 }
 
-.purchase-action .price {
+.purchase-action .discount {
     text-decoration: line-through;
     font-weight: bold;
 }

@@ -13,8 +13,8 @@ function getProductCard(product) {
                     </a>
                 <div class="infor">${product.name}</div>
                 <div class="purchase-action">
-                    <div class="discount">${discountPrice}đ</div>
                     <div class="price">${product.originalPrice}đ</div> 
+                    <div class="discount">${discountPrice}đ</div>
                 </div> 
                 <button class="buy-now">
                         <a href="./pages/product/product-detail.html?id=${product.id}">XEM CHI TIẾT</a> 
@@ -26,6 +26,7 @@ function getProductCard(product) {
 
 function getCartItem(product) {
     // ** Check condition
+    if (!product) return;
 
     return `
         <div class="image-information-cart mt-2 d-flex">
@@ -58,6 +59,7 @@ function getCartItem(product) {
         </div>
     `;
 }
+
 
 function getCartSubtotal() {
 

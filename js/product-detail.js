@@ -22,10 +22,48 @@ function initialState() {
     container.innerHTML = productHTML;
 }
 
-function getProductDetail(product) {
+// ** select
+function decrease() {
+    const quantityInput = document.getElementById('quantity');
+    let quantity = parseInt(quantityInput.value);
 
-    console.debug(product)
+    if (quantity > 1) {
+        quantity--;
+        quantityInput.value = quantity;
+    }
+}
+
+function increase() {
+    const quantityInput = document.getElementById('quantity');
+    let quantity = parseInt(quantityInput.value);
+    quantity++;
+    quantityInput.value = quantity;
+}
+
+const images = [
+    '../../assets/img/sp2.png',
+    '../../assets/img/sp3.png',
+    '../../assets/img/sp5.png',
+];
+
+function selectImageUrlByIndex(index) {
+    if ((!index && index !== 0) || (typeof index !== 'number') || (index < 0) || index > images?.length) {
+        return null;
+    }
+
+    const imageUrl = images[index];
+
+    const imageElm = document.querySelector('#product-thumbnail');
+    if (!imageElm) return;
+
+    imageElm.src = imageUrl;
+}
+
+function getProductDetail(product) {
     // ** Check condition
+    if (!product) return;
+
+    let defaultImageUrl = `../.${product.images[0].url}`;
 
     return `
         <div class="row">
@@ -41,23 +79,23 @@ function getProductDetail(product) {
                 <div class="row h-unset p-1">
                     <div class="col-sm-12 col-md-12 col-12 mt-1">
                         <div class="image-wrapper">
-                            <img src="../.${product.images[0].url}" alt="${product.name}">
+                            <img id="product-thumbnail" src="${defaultImageUrl}" alt="${product.name}">
                         </div>
                     </div>
                 </div>
                 <div class="row h-unset mt-2">
                     <div class="col-sm-3 col-md-3 col-3">
-                        <div class="small-image-wrapper">
+                        <div class="small-image-wrapper" onClick="selectImageUrlByIndex(${0})">
                             <img src="../../assets/img/sp2.png" alt="">
                         </div>
                     </div>
                     <div class="col-sm-3 col-md-3 col-3">
-                        <div class="small-image-wrapper">
+                        <div class="small-image-wrapper" onClick="selectImageUrlByIndex(${1})">
                             <img src="../../assets/img/sp3.png" alt="">
                         </div>
                     </div>
                     <div class="col-sm-3 col-md-3 col-3">
-                        <div class="small-image-wrapper">
+                        <div class="small-image-wrapper" onClick="selectImageUrlByIndex(${2})">
                             <img src="../../assets/img/sp5.png" alt="">
                         </div>
                     </div>
@@ -93,7 +131,7 @@ function getProductDetail(product) {
                                 <div class="col-sm-4 col-md-4 col-4">
                                     <div class="select">
                                         <button class="button-1" onclick="decrease()">-</button>
-                                        <input type="text" id="quantity" value="1" min="1" readonly>
+                                        <input type="text" id="quantity" value="${product.quantity || 1}" readonly>
                                         <button class="button-2" onclick="increase()">+</button>
                                     </div>
                                 </div>
@@ -115,7 +153,7 @@ function getProductDetail(product) {
                                         <li> <i class='bx bx-check'></i> Nhận ngay siêu tốc trong thị trấn Gành Hào</li>
                                         <li> <i class='bx bx-check'></i> Sản phẩm chính hãng, không pha trộn, tẩm đường..</li>
                                         <li> <i class='bx bx-check'></i> Kèm theo đường phèn hữu cơ cùng bộ hộp và túi giấy sang trọng.</li>
-                                        <li> <i class='bx bx-check'></i> Bồi hoàn 1000% nếu sản phẩm không như cam kết.</li>
+                                        <li> <i class='bx bx-check'></i> Bồi hoàn 100% nếu sản phẩm không như cam kết.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -191,38 +229,45 @@ function getProductDetail(product) {
 
 function addToCart(productId) {
     // ** Check condition
-
+    if (!productId) return;
     /**
      * B1: Khai bao 1 bien de nhan du lieu
      * B2: Lay danh san pham hien co trong localStorage
      * B3: Lap qua danh sach san pham tim san pham co id bang voi productId
      * B4: Gan san pham tim duoc cho bien o buoc 1
-     */
+     **/
     let product;
     const productsList = JSON.parse(localStorage.getItem(TRENDING_PRODUCTS_KEY));
-    for (let i = 0; i < productsList.length; ++i) {
+    for (let i = 0; i < productsList?.length; ++i) {
         if (productsList[i].id === productId) {
             product = productsList[i];
         }
     }
 
-    const productsCart = JSON.parse(localStorage.getItem(CART_KEY));
+    const productsCart = JSON.parse(localStorage.getItem(CART_KEY)) || [];
 
     let result = productsCart;
+
+    const quantityElm = document.querySelector('#quantity');
+    let quantity = 1;
+    if (quantityElm) {
+        quantity = quantityElm?.value || 1;
+    }
+
     const isExisting = productsCart.findIndex(item => item.id === productId);
     if (isExisting > -1) {
-        result = productsCart.map(item => {
-            if (item.id === productId) {
-                item.quantity += 1;
-            }
-    
-            return item;
-        });
+    result = productsCart.map(item => {
+        if (item.id === productId) {
+            item.quantity = (item.quantity || 0) + (quantity || 1);
+        }
+
+        return item;
+    });
     } else {
+        product.quantity = quantity || 1;
         result.push(product);
     }
 
     localStorage.setItem(CART_KEY, JSON.stringify(result));
     alert('Bạn Đã Thêm Sản Phẩm Vào Giỏ hàng!');
-
 }

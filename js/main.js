@@ -1,4 +1,4 @@
-console.debug('main.js is working')
+// console.debug('main.js is working')
 
 function initialProducts() {
     // ** Get products list container element
@@ -32,6 +32,7 @@ function initialProducts() {
     // ** Render products list into view
     container.innerHTML = result;
 }
+
 
 function initialAppState() {
     initialProducts();

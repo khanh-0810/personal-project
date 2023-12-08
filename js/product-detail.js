@@ -20,6 +20,29 @@ function initialState() {
     const productHTML = getProductDetail(product);
 
     container.innerHTML = productHTML;
+
+    // Thời gian kết thúc của flash sale (đặt theo định dạng timestamp)
+    const saleEndTime = new Date('December 25, 2023 23:59:59').getTime();
+
+    // Cập nhật thời gian còn lại mỗi giây
+    const updateTimer = setInterval(function() {
+    const now = new Date().getTime();
+    const timeLeft = saleEndTime - now;
+
+    if (timeLeft > 0) {
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById('timer').innerText = `${hours} giờ ${minutes} phút ${seconds} giây`;
+        
+    } else {
+        clearInterval(updateTimer);
+        document.getElementById('timer').innerText = "Đã kết thúc";
+        document.getElementById('flashSale').innerHTML += "<p>Flash sale đã kết thúc!</p>";
+    }
+    }, 1000);
+
 }
 
 // ** select
@@ -58,6 +81,7 @@ function selectImageUrlByIndex(index) {
 
     imageElm.src = imageUrl;
 }
+
 
 function getProductDetail(product) {
     // ** Check condition
@@ -99,9 +123,7 @@ function getProductDetail(product) {
                             <img src="../../assets/img/sp5.png" alt="">
                         </div>
                     </div>
-                    <div class="col-sm-3 col-md-3 col-3">
-                        
-                    </div>
+                    
                 </div>
                 <div class="row mt-2 h-unset">
                     <div class="col-sm-12 col-md-12 col-12">
@@ -123,6 +145,10 @@ function getProductDetail(product) {
                                     <div class="discount">${product.price}đ</div>
                                     <div class="price">${product.originalPrice}đ</div> 
                                 </div>
+                                <div id="flashSale">
+                                    <h2>Flash Sale</h2>
+                                    <p id="saleTimer"><span id="timer"></span></p>
+                                </div>
                             </div>
                             <div class="col-sm-12 col-md-12 col-12">
                                 <div class="sale">Giảm 19%</div>
@@ -131,7 +157,7 @@ function getProductDetail(product) {
                                 <div class="col-sm-4 col-md-4 col-4">
                                     <div class="select">
                                         <button class="button-1" onclick="decrease()">-</button>
-                                        <input type="text" id="quantity" value="${product.quantity || 1}" readonly>
+                                        <input type="text" id="quantity" value="${product.quantity || 1}"readonly>
                                         <button class="button-2" onclick="increase()">+</button>
                                     </div>
                                 </div>

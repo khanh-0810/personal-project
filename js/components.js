@@ -3,7 +3,7 @@ function getProductCard(product) {
         return;
     }
 
-    const discountPrice = (product?.originalPrice * (product?.discount / 100)) + product?.originalPrice;
+    const discountPrice = (product?.price * (product?.discount / 100)) + product?.price;
 
     return `
         <div class="col-sm-6 col-md-6 col-3 centered">
@@ -13,8 +13,8 @@ function getProductCard(product) {
                     </a>
                 <div class="infor">${product.name}</div>
                 <div class="purchase-action">
-                    <div class="price">${product.originalPrice}đ</div> 
                     <div class="discount">${discountPrice}đ</div>
+                    <div class="price">${product.price}đ</div> 
                 </div> 
                 <button class="buy-now">
                         <a href="./pages/product/product-detail.html?id=${product.id}">XEM CHI TIẾT</a> 
@@ -22,6 +22,24 @@ function getProductCard(product) {
             </div>
         </div>
     `;
+}
+
+// ** select
+function decrease() {
+    const quantityInput = document.getElementById('quantity');
+    let quantity = parseInt(quantityInput.value);
+
+    if (quantity > 1) {
+        quantity--;
+        quantityInput.value = quantity;
+    }
+}
+
+function increase() {
+    const quantityInput = document.getElementById('quantity');
+    let quantity = parseInt(quantityInput.value);
+    quantity++;
+    quantityInput.value = quantity;
 }
 
 function getCartItem(product) {
@@ -46,9 +64,9 @@ function getCartItem(product) {
             </div>
             <div class="col-sm-2 col-md-2 col-2">
                 <div class="product-quantity">
-                    <button class="button-1" onclick="decrease()">-</button>
-                    <input type="text" id="quantity" value="${product.quantity || 1}" readonly>
-                    <button class="button-2" onclick="increase()">+</button>
+
+                    <input type="text" id="quantity" value="${product.quantity || 1}"readonly>
+
                 </div>
             </div>
             <div class="col-sm-2 col-md-2 col-2">
